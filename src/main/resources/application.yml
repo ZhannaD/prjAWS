@@ -1,0 +1,11 @@
+#
+# Configurações de acesso ao Minio
+#
+aws:
+  s3:
+    region: us-east-2
+# When using AWS, the library will use one of the available
+# credential sources described in the documentation.     
+    accessKeyId: AKIAQO6NDZLXDG6WK27I
+    secretAccessKey: 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
+    bucket: zhannad.aws.users
