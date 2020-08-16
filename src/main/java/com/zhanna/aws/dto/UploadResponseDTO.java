@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.zhanna.aws.dto;
 
 import java.util.List;
 
@@ -11,14 +11,14 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Builder
-public class UploadResult {
+public class UploadResponseDTO {
 	HttpStatus status;
 	String[] keys;
 
-	public UploadResult() {
+	public UploadResponseDTO() {
 	}
 
-	public UploadResult(HttpStatus status, List<String> keys) {
+	public UploadResponseDTO(HttpStatus status, List<String> keys) {
 		this.status = status;
 		this.keys = keys == null ? new String[] {} : keys.toArray(new String[] {});
 

@@ -1,14 +1,21 @@
-package com.example.demo.entity;
+package com.zhanna.aws.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.ArrayList;
+import java.util.List;
 
-@Data
-@NoArgsConstructor
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
+
 public class Customer {
 
-	private String id;
+	private Long id;
 	private String name;
-	private String projectName;
-	// private String file;
+	// private String projectName;
+	@Builder.Default
+	private List<Project> projects = new ArrayList<>();
 }

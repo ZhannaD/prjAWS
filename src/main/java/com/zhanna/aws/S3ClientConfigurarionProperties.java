@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.zhanna.aws;
 
 import java.net.URI;
 

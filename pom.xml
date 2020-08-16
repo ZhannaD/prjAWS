@@ -7,22 +7,21 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.4.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<version>2.3.0.RELEASE</version>
+		<relativePath />
 	</parent>
 
-	<groupId>com.example</groupId>
+	<groupId>com.zhanna</groupId>
 	<artifactId>prjAWS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>prjAWS</name>
-	<description>Demo project for Spring Boot</description>
+	<description>My AWS project for Spring Boot</description>
 
 
 	<dependencyManagement>
 		<dependencies>
 
 			<dependency>
-
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>${spring.version}</version>
@@ -98,8 +97,8 @@
 	</build>
 
 	<properties>
-		<java.version>1.8</java.version>
-		<spring.version>2.2.1.RELEASE</spring.version>
+		<java.version>11</java.version>
+		<spring.version>2.3.0.RELEASE</spring.version>
 		<awssdk.version>2.10.27</awssdk.version>
 	</properties>
 </project>

@@ -1,10 +1,12 @@
-package com.example.demo;
+package com.zhanna.aws.config;
 
 import java.time.Duration;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.zhanna.aws.S3ClientConfigurarionProperties;
 
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider;
