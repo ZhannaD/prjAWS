@@ -4,18 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 @Builder
 
 public class Customer {
 
 	private Long id;
 	private String name;
-	// private String projectName;
 	@Builder.Default
 	private List<Project> projects = new ArrayList<>();
 }

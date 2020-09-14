@@ -6,5 +6,5 @@ import org.springframework.http.codec.multipart.FilePart;
 import reactor.core.publisher.Mono;
 
 public interface ProjectService {
-	public Mono<String> saveFile(HttpHeaders headers, FilePart part, String folderName);
+	Mono<String> saveFile(HttpHeaders headers, FilePart part, String folderName);
 }

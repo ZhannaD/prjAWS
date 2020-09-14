@@ -18,6 +18,12 @@
 	<description>My AWS project for Spring Boot</description>
 
 
+	<properties>
+		<java.version>11</java.version>
+		<spring.version>2.3.0.RELEASE</spring.version>
+		<awssdk.version>2.10.27</awssdk.version>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 
@@ -69,14 +75,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
-
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
@@ -96,9 +94,5 @@
 		</plugins>
 	</build>
 
-	<properties>
-		<java.version>11</java.version>
-		<spring.version>2.3.0.RELEASE</spring.version>
-		<awssdk.version>2.10.27</awssdk.version>
-	</properties>
+
 </project>

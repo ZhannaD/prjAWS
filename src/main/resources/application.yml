@@ -9,3 +9,5 @@ aws:
     accessKeyId: TEST
     secretAccessKey: TEST
     bucket: TEST
+    multipart: 5242880
+    

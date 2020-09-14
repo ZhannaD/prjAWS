@@ -21,16 +21,21 @@ import com.zhanna.aws.dto.UploadResponseDTO;
 import com.zhanna.aws.model.Customer;
 import com.zhanna.aws.model.Project;
 import com.zhanna.aws.service.ProjectService;
-import com.zhanna.aws.service.ProjectServiceImpl;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/project")
+@RequestMapping("/api/v1/projects")
 @Slf4j
 public class ProjectRestController {
+
+	private final ProjectService projectService;
+
+	public ProjectRestController(ProjectService projectService) {
+		this.projectService = projectService;
+	}
 
 	@GetMapping
 	public String getTest() {
@@ -38,7 +43,7 @@ public class ProjectRestController {
 		return "Test Spring Boot Application";
 	}
 
-	@PostMapping(path = "/uploadProject", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Mono<ResponseEntity<UploadResponseDTO>> uploadHandler(@RequestHeader HttpHeaders headers, @RequestPart("id") String id,
 			@RequestPart("name") String name, @RequestPart("projectName") String projectName, /* @RequestPart("customer") Mono<Customer> customer, */
 			@RequestPart("file") Flux<FilePart> parts) {
@@ -54,9 +59,7 @@ public class ProjectRestController {
 		projects.add(project);
 		customer.setProjects(projects);
 
-		ProjectService service = new ProjectServiceImpl();
-
-		return parts.ofType(FilePart.class).flatMap((part) -> service.saveFile(headers, part, folderName)).collect(Collectors.toList())
+		return parts.ofType(FilePart.class).flatMap((part) -> projectService.saveFile(headers, part, folderName)).collect(Collectors.toList())
 				.map((keys) -> ResponseEntity.status(HttpStatus.CREATED).body(new UploadResponseDTO(HttpStatus.CREATED, keys)));
 
 	}
